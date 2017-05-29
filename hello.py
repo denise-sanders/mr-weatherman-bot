@@ -106,4 +106,5 @@ def pug_hook():
 if __name__ == "__main__":
     thread = Thread(target=threaded_function, args=(10,))
     thread.start() # the thread should never stop haha
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
