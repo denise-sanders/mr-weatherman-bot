@@ -14,7 +14,6 @@ bot_token = config['bot_user_access_token']
 id = config['client_id']
 secret = config['client_secret']
 
-print(token)
 
 sc = SlackClient(bot_token)
 
@@ -31,7 +30,7 @@ def get_channel_id(name):
         if channel['name_normalized'] == name:
             return channel['id']
 
-get_channel_id('bot_testing') # sticht to general
+#get_channel_id('bot_testing') # sticht to general
 
 
 def send_message(channel,text):
@@ -42,7 +41,6 @@ def send_message(channel,text):
     message['text'] = text
 
     m = json.dumps(message)
-    print(m)
     sc.api_call("chat.postMessage",channel=channel_id,text=text)
 
 import pugme
