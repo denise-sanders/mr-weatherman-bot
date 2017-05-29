@@ -6,6 +6,7 @@ import random
 from flask import Flask
 import urllib.request
 import weather
+import os
 
 config = ConfigObj('config.ini')
 
