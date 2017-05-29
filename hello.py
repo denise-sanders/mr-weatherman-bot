@@ -70,13 +70,21 @@ from threading import Thread
 from time import sleep
 import datetime
 
+
+def post_weather():
+    weather.get_forecast()
+
+
 def threaded_function(arg):
     while True:
         now = datetime.datetime.now()
-        if now.hour == 12:
+        # weekday tuesday == 1 and thursday == 3
+        if now.hour == 12 and (now.weekday() == 1 or now.weekday() == 3):
             # ping the server
-            urllib.request.urlopen('/weather')
-            sleep(60*60*21) # make it sleep for 21 hours
+            #urllib.request.urlopen('/weather')
+            post_weather()
+            sleep(60*60*22) # make it sleep for 22 hours
+
         sleep(1)
 
 
