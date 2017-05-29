@@ -100,8 +100,10 @@ def weather_hook():
 def pug_hook():
     count = None
     #count comes from reading the message that triggered this
-    pugme.get_pug_me(count)
-    # post_pug() works for sure
+    #pugme.get_pug_me(count)
+    print('im in the function')
+    post_pug() works for sure
+    
     return "Hello World!"
 
 if __name__ == "__main__":
